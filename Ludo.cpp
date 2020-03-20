@@ -3,12 +3,151 @@
 #include<conio.h>
 #include<stdlib.h>
 using namespace std;
+char pos_array[60]=[]
+pos1=(81,315);
+pos2=(135,315)
+pos3=(189,315)
+pos4=(243,315)
+pos5=(315,243)
+pos6=(315,189)
+pos7=(315,135)
+pos8=(315,81)
+pos9=(315,27)
+pos10=(405,27)
+pos11=(495,27)
+pos12=(495,81)
+pos13=(495,135)
+pos14=(495,189)
+pos15=(495,243)
+pos16=(567,315)
+pos17=(621,315)
+pos18=(675,315)
+pos19=(729,315)
+pos20=(783,315)
+pos21=(783,405)
+pos22=(783,495)
+pos23=(729,495)
+pos24=(675,495)
+pos25=(621,495)
+pos26=(567,495)
+pos27=(495,567)
+pos28=(495,621)
+pos29=(495,675)
+pos30=(495,729)
+pos31=(495,783)
+pos32=(405,783)
+pos33=(315,783)
+pos34=(315,729)
+pos35=(315,675)
+pos36=(315,621)
+pos37=(315,567)
+pos38=(243,495)
+pos39=(189,495)
+pos40=(135,495)
+pos41=(81,495)
+pos42=(27,495)
+pos43=(27,405)
+pos44=(27,315)
+
+posG1=(81,405)
+posG2=(135,405)
+posG3=(189,405)
+posG4=(243,405)
+
+posB1=(405,81)
+posB2=(405,135)
+posB3=(405,189)
+posB4=(405,243)
+
+posR1=(729,405)
+posR2=(675,405)
+posR3=(621,405)
+posR4=(567,405)
+
+posY1=(405,729)
+posY2=(405,675)
+posY3=(405,621)
+posY4=(405,567)
+
+
+class dice
+{
+public:
+
+    int dice_val()
+    {
+        return rand()%5+1;
+    }
+};
+class colourturn
+{
+public:
+
+    int greenturn()
+    {
+
+    };
+    int blueturn()
+    {
+
+    };
+    int redturn()
+    {
+
+    };
+    int yellowturn()
+    {
+
+    };
+};
+class cut
+{
+
+};
 int main()
 {
-    int dice_val;
+    int turn=0;
 
+
+    //object
+    dice d;
+    d.dice_val();
+
+    //turn
+     for(int i=0;i<20;i++)
+ {  if(turn<=3)
+    {
+    turn++;
+    }
+    else
+    {
+    turn=1;
+    }
+ }
+    switch(turn)
+    {
+    case 1:
+        greeenturn();
+        break;
+    case 2:
+        blueturn();
+        break;
+    case 3:
+        redturn();
+        break;
+    case 4:
+        yellowturn();
+        break;
+    };
+
+
+
+    //token movement
+
+   //window size
     initwindow(1520,825);
 
+   //ludo board boundary
     rectangle(0,0,810,810);
 
     // 4 players rectangle
@@ -25,6 +164,7 @@ int main()
     setfillstyle(SOLID_FILL,YELLOW);
     floodfill(10,550,WHITE);
 
+    //small box lines
     line(54,270,54,540);
     line(108,270,108,540);
     line(162,270,162,540);
@@ -68,11 +208,10 @@ int main()
     line(0,270,810,270);
     line(0,540,810,540);
 
-
-   line(0,360,270,360);
-   line(0,450,270,450);
-   line(540,360,810,360);
-   line(540,450,810,450);
+    line(0,360,270,360);
+    line(0,450,270,450);
+    line(540,360,810,360);
+    line(540,450,810,450);
 
     line(360,0,360,270);
     line(450,0,450,270);
@@ -82,7 +221,11 @@ int main()
     line(270,270,540,540);
     line(270,540,540,270);
 
- setlinestyle(SOLID_FILL,THICK_WIDTH,5);
+
+//width of token circles
+    setlinestyle(SOLID_FILL,THICK_WIDTH,5);
+
+ //token circles
     circle(90,90,35);
     circle(180,90,35);
     circle(90,180,35);
@@ -103,6 +246,8 @@ int main()
     circle(720,630,35);
     circle(720,720,35);
 
+
+  //winner box
     setfillstyle(SOLID_FILL,GREEN);
     floodfill(400,405,WHITE);
 
@@ -117,7 +262,7 @@ int main()
 
 
 
-// green enterance
+// green entrance
      setfillstyle(SOLID_FILL,GREEN);
     floodfill(81,280,WHITE);
 
@@ -135,7 +280,7 @@ int main()
 
 
 
-    // blue enterance
+    // blue entrance
      setfillstyle(SOLID_FILL,BLUE);
     floodfill(390,104,WHITE);
 
@@ -152,7 +297,7 @@ int main()
     floodfill(390,266,WHITE);
 
 
-      // RED enterance
+      // RED entrance
      setfillstyle(SOLID_FILL,RED);
     floodfill(750,390,WHITE);
 
@@ -169,7 +314,7 @@ int main()
     floodfill(750,460,WHITE);
 
 
-    // YELLOW nterance
+    // YELLOW entrance
      setfillstyle(SOLID_FILL,YELLOW);
     floodfill(320,750,WHITE);
 
@@ -184,20 +329,6 @@ int main()
 
       setfillstyle(SOLID_FILL,YELLOW);
     floodfill(400,590,WHITE);
-
-
-// DICE
-{
-    rand()%6+1;
-
-    }
-
-
-
-
-
-
-
 
 
 
